@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Interest</title>
+
+<!-- Include CSS File Here -->
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/style1.css"/>
+<!-- Include JS File Here -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/registration.js"></script>
+</head>
+<body>
+<div id="wrap">
+
+<div id="top"> </div>
+
+<div id="main1">
+<div id="container1">
+<div id="header1">
+
+    
+    <div id="tagline">
+        <h3>Entertainment</h3>
+    </div>
+
+    <ul id="menu">
+        <li><a href="front.html">Home</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a href="login.html">Sign In</a></li>
+    
+       
+    </ul>
+
+<div class="container">
+<div class="main">
+<form class="form" name="form2" method="post" action="signup.php">
+<td>
+<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="">
+<tr>
+<td colspan="3"><p>&nbsp;</p>
+<center>
+  <p class="sign"><strong> Sign Up Here</strong></p></td>
+</tr>
+</center>
+<tr>
+<td width="78">Username</td>
+<td width="6">:</td>
+<td width="294"><input name="myusername" type="text" id="myusername"></td>
+</tr>
+<tr>
+<td>Enter Password</td>
+<td>:</td>
+<td><input name="mypassword" type="password" id="mypassword"></td>
+</tr>
+<tr>
+<td>Confirm Password</td>
+<td>:</td>
+<td><input name="mypassword2" type="password" id="mypassword2"></td>
+</tr>
+<tr>
+<td>Email id</td>
+<td>:</td>
+<td><input name="myemail" type="text" id="myemail"></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><input type="submit" name="Submit" value="Sign Up" id="SignUp" onclick="javascript:return validateMyForm();"></td>
+</tr>
+</table>
+</td>
+</form>
+</tr>
+</table>
+
+ <h1>Already Registered?</h1>
+<a href="login.html"> Login here </a> </form>
+</div>
+<script type="text/javascript" language="javascript"> 
+// EACH FIELD GOES THROUGH A JAVASCRIPT VALIDATION BEFORE GETTING THE USER REGISTERED
+function validateMyForm ( ) { 
+    var isValid = true;
+var filter=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;    
+
+    if ( document.form2.myusername.value == "" ) { 
+	    alert ( "Please type your Name" ); 
+	    isValid = false;
+    } else if ( document.form2.myusername.value.length < 8 ) { 
+            alert ( "Your name must be at least 8 characters long" ); 
+            isValid = false;
+}else if ( document.form2.mypassword.value == "" ) { 
+            alert ( "Password required" ); 
+            isValid = false;
+    
+    }
+else if(!passw.test(document.form2.mypassword.value))   
+{   
+alert('Password should be minimum 7 chars long and should have combination of capital letters and special chars')  
+isValid=false;  
+}   
+else if ( document.form2.mypassword2.value == "" ) { 
+            alert ( "Please confirm password" ); 
+            isValid = false;
+    
+    }
+else if ( document.form2.mypassword.value!=document.form2.mypassword2.value  ) { 
+            alert ( "Password does not match" ); 
+            isValid = false;
+}
+
+else if ( document.form2.myemail.value == "" ) { 
+            alert ( "Please type your Email" ); 
+            isValid = false;
+    } 
+
+else if (!filter.test(document.form2.myemail.value)){
+alert("Please input a valid email address!")
+isValid=false;
+}
+
+
+    return isValid;
+}
+//-->
+</script>
+
+</body>
+</html>

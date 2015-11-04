@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Interest</title>
+
+<!-- Include CSS File Here -->
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/style1.css"/>
+<!-- Include JS File Here -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/registration.js"></script>
+</head>
+
+
+<div id="main1">
+<div id="container1">
+<div id="header">
+
+    
+    <div id="tagline">
+        <h3>Entertainment</h3>
+    </div>
+
+    <ul id="menu">
+        <li><a href="front.html">Home</a></li>
+        <li><a href="registration.html">Register</a></li>
+        <li><a href="login.html">Sign In</a></li>
+        
+        <li><a href="logout.php">Sign Out</a></li>
+        <li><a href="index.html">Search</a></li>
+        
+        
+    </ul>
+
+<div>
+<div>
+<div id="content1">
+<div class="container">
+<div class="main">
+<div class="slogan">
+The most awaited banners!!!!
+// CHANGING THE IMAGE IN EVERY 5 SECONDS
+<img id="thisImg" alt="img" src="images/img-0.jpg" width=250 height=230/>
+<script type="text/javascript">
+    $(function(){
+        //prepare Your data array with img urls
+        var dataArray=new Array();
+        dataArray[0]="images/img1.jpg";
+        dataArray[1]="images/img1.png";
+        dataArray[2]="images/img2.jpg";
+        dataArray[3]="images/img-0.jpg";
+
+        //start with id=0 after 5 seconds
+        var thisId=0;
+
+        window.setInterval(function(){
+            $('#thisImg').attr('src',dataArray[thisId]);
+            thisId++; //increment data array id
+            if (thisId==3) thisId=0; //repeat from start
+        },5000);        
+    });
+</script>
+// CHANGING THE BACKGROUND IN EVERY 5000 MS
+<script type="text/javascript">
+$(function () {
+    var body = $('body');
+    var backgrounds = [
+'url(images/bg.jpg)',
+      'url(images/background-1.jpg)',
+'url(images/background_2.jpg)',
+'url(images/background_6.jpg)', 
+      'url(images/background_7.jpg)'];
+    var current = 0;
+
+    function nextBackground() {
+        body.css(
+            'background',
+        backgrounds[current = ++current % backgrounds.length]);
+
+        setTimeout(nextBackground, 5000);
+    }
+    setTimeout(nextBackground, 5000);
+    body.css('background', backgrounds[0]);
+});
+</script>
+</div>
+</div>
+</div>
+</div>
+<div id="sidebar">
+<div id="popular">
+                    <h3>Upcoming Movie Trailors</h3>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=gOW_azQbOjw">Mission Impossible!</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=_flR9_6msik">Fantastic 4!</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=I3IiZU9JBuE">The Gift!</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=w_Ky4KPzKwY">The man from U.N.C.L.E!</a></li>
+                    </ul>
+                </div>
+                
+
+
+
+
+</body>
+</html>		
